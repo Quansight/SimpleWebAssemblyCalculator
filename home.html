@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="calculator.js"></script>
+
+    <title>WebAssembly Calculator</title>
+</head>
+<body onload="set()">
+    <div id="header">
+        <header>
+            <h1>WASM Calculator</h1>
+        </header>
+    </div>
+    <div id="calc-area">
+        <div id="time-box">
+            <h3>Execute Time</h3>
+        </div>
+        <div id="calculator">
+            <div class="box">
+                <div class="display">
+                    <input type="text" readonly size="18" id="d">
+                </div>
+                <div class="keys">
+                    
+                    <!--ROW 1-->
+                    <p>
+                        <input type="button" class="button black" value=" " onclick='addToScreen("1")'>
+                        <input type="button" class="button black" value=" " onclick='addToScreen("1")'>
+                        <input type="button" class="button black" value=" " onclick='addToScreen("1")'>
+                        <input type="button" class="button pink" value="/" onclick='addToScreen("/")'>
+                    </p>
+                    
+                    <!--ROW 2-->
+                    <p>
+                        <input type="button" class="button black" value="7" onclick='addToScreen("7")'>
+                        <input type="button" class="button black" value="8" onclick='addToScreen("8")'>
+                        <input type="button" class="button black" value="9" onclick='addToScreen("9")'>
+                        <input type="button" class="button pink" value="*" onclick='addToScreen("*")'>
+                    </p>
+                    
+                    <!--ROW 3-->
+                    <p>
+                        <input type="button" class="button black" value="4" onclick='addToScreen("4")'>
+                        <input type="button" class="button black" value="5" onclick='addToScreen("5")'>
+                        <input type="button" class="button black" value="6" onclick='addToScreen("6")'>
+                        <input type="button" class="button pink" value="-" onclick='addToScreen("-")'>
+                    </p>
+                    
+                    <!--ROW 4-->
+                    <p>
+                        <input type="button" class="button black" value="1" onclick='addToScreen("1")'>
+                        <input type="button" class="button black" value="2" onclick='addToScreen("2")'>
+                        <input type="button" class="button black" value="3" onclick='addToScreen("3")'>
+                        <input type="button" class="button pink" value="+" onclick='addToScreen("+")'>
+                    </p>
+                        
+                    <!--ROW 5-->
+                    <p>
+                        <input type="button" class="button black" value="0" onclick='addToScreen("0")'>
+                        <input type="button" class="button black" value="." onclick='addToScreen(".")'>
+                        <input type="button" class="button black" value="C" onclick='setScreen("")'>
+                        <input type="button" class="button orange" value="=" onclick='e()'>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="selector-area">
+            <h3>Selector</h3>
+            <select id="selector" onclick="set()">
+                <option value="javascript">JavaScript</option>
+                <option value="wasm">WebAssembly</option>
+            </select>
+        </div>
+    </div>
+    <div id="about-calc">
+            <h3>Information</h3>
+            <p>
+                This is a test calculator that compare the speed of calculation
+                between javascript and C compiled and ran with WebAssembly
+            </p>
+    </div>
+</body>
+</html>
