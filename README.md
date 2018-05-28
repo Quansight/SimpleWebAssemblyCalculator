@@ -8,7 +8,7 @@ another ".js" file. For the C calculation, the library [TinyExpr](https://github
 is used.
 
 ## Compiling
-If you want to customize this project this is how you compile.
+If you want to customize this project, this is how you compile.
 To compile the C files [Emscripten](https://github.com/kripken/emscripten) needs to me installed.
 [Emscripten](https://github.com/kripken/emscripten) compiles the C code into a [".wasm"](https://webassembly.org/docs/text-format/) 
 file and the auto generates JavaScript file for easy C method calling.
