@@ -10,14 +10,21 @@
     <title>WebAssembly Calculator</title>
 </head>
 <body onload="set()">
-    <div id="header">
+    <div class="bar" id="header">
         <header>
-            <h1>WASM Calculator</h1>
+            <h1>WebAssembly Calculator</h1>
         </header>
     </div>
     <div id="calc-area">
-        <div id="time-box">
-            <h3>Execute Time</h3>
+        <div id="about-calc">
+                <h3>Information</h3>
+                <p>
+                    This is a simple calculator that uses both JavaScript and C. The C  libraries and 
+                    functoins are compiled into WebAssembly using
+                    <a href="https://github.com/kripken/emscripten/wiki">Emscripten</a>.
+                    The C library for
+                    calculations is <a href="https://github.com/codeplea/tinyexpr">TinyExpr.</a>
+                </p>
         </div>
         <div id="calculator">
             <div class="box">
@@ -28,9 +35,9 @@
                     
                     <!--ROW 1-->
                     <p>
-                        <input type="button" class="button black" value=" " onclick='addToScreen("1")'>
-                        <input type="button" class="button black" value=" " onclick='addToScreen("1")'>
-                        <input type="button" class="button black" value=" " onclick='addToScreen("1")'>
+                        <input type="button" class="button black" value="" onclick='addToScreen("")'>
+                        <input type="button" class="button black" value="" onclick='addToScreen("")'>
+                        <input type="button" class="button pink" value="%" onclick='addToScreen("%")'>
                         <input type="button" class="button pink" value="/" onclick='addToScreen("/")'>
                     </p>
                     
@@ -76,12 +83,10 @@
             </select>
         </div>
     </div>
-    <div id="about-calc">
-            <h3>Information</h3>
-            <p>
-                This is a test calculator that compare the speed of calculation
-                between javascript and C compiled and ran with WebAssembly
-            </p>
+    <div class="bar">
+        <footer>
+            <p>Created By: <a href="https://github.com/hoo761">hoo761</a></p>
+        </footer>
     </div>
 </body>
 </html>
