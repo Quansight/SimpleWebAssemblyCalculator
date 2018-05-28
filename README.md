@@ -8,6 +8,7 @@ another ".js" file. For the C calculation, the library [TinyExpr](https://github
 is used.
 
 ## Compiling
+If you want to customize this project this is how you compile.
 To compile the C files [Emscripten](https://github.com/kripken/emscripten) needs to me installed.
 [Emscripten](https://github.com/kripken/emscripten) compiles the C code into a [".wasm"](https://webassembly.org/docs/text-format/) 
 file and the auto generates JavaScript file for easy C method calling.
@@ -19,7 +20,7 @@ This command was used to compile the C file and libraries.
 ## Running the page
 To run the page run the command:
 ```
-python SimpleHTTPServer 9000
+python -m SimpleHTTPServer 9000
 ```
-This sets up a local HTTP server to connect to from the adress `localhost:9000`
-in a web browser.
+This sets up a local HTTP server to connect to from the adress `localhost:9000/home.html`
+in a web browser. When HTTP server loads, click on "home.html" file.
