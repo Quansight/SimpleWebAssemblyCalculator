@@ -1886,11 +1886,6 @@ function copyTempDouble(ptr) {
 
   var _ceil=Math_ceil;
 
-  function _clock() {
-      if (_clock.start === undefined) _clock.start = Date.now();
-      return ((Date.now() - _clock.start) * (1000000 / 1000))|0;
-    }
-
   var _fabs=Math_abs;
 
   var _floor=Math_floor;
@@ -2159,7 +2154,7 @@ function invoke_iiii(index,a1,a2,a3) {
 
 Module.asmGlobalArg = {};
 
-Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "abortStackOverflow": abortStackOverflow, "nullFunc_d": nullFunc_d, "nullFunc_dd": nullFunc_dd, "nullFunc_ddd": nullFunc_ddd, "nullFunc_dddd": nullFunc_dddd, "nullFunc_ddddd": nullFunc_ddddd, "nullFunc_dddddd": nullFunc_dddddd, "nullFunc_ddddddd": nullFunc_ddddddd, "nullFunc_dddddddd": nullFunc_dddddddd, "nullFunc_di": nullFunc_di, "nullFunc_did": nullFunc_did, "nullFunc_didd": nullFunc_didd, "nullFunc_diddd": nullFunc_diddd, "nullFunc_didddd": nullFunc_didddd, "nullFunc_diddddd": nullFunc_diddddd, "nullFunc_didddddd": nullFunc_didddddd, "nullFunc_diddddddd": nullFunc_diddddddd, "nullFunc_ii": nullFunc_ii, "nullFunc_iiii": nullFunc_iiii, "invoke_d": invoke_d, "invoke_dd": invoke_dd, "invoke_ddd": invoke_ddd, "invoke_dddd": invoke_dddd, "invoke_ddddd": invoke_ddddd, "invoke_dddddd": invoke_dddddd, "invoke_ddddddd": invoke_ddddddd, "invoke_dddddddd": invoke_dddddddd, "invoke_di": invoke_di, "invoke_did": invoke_did, "invoke_didd": invoke_didd, "invoke_diddd": invoke_diddd, "invoke_didddd": invoke_didddd, "invoke_diddddd": invoke_diddddd, "invoke_didddddd": invoke_didddddd, "invoke_diddddddd": invoke_diddddddd, "invoke_ii": invoke_ii, "invoke_iiii": invoke_iiii, "___lock": ___lock, "___setErrNo": ___setErrNo, "___syscall140": ___syscall140, "___syscall146": ___syscall146, "___syscall54": ___syscall54, "___syscall6": ___syscall6, "___unlock": ___unlock, "_ceil": _ceil, "_clock": _clock, "_emscripten_memcpy_big": _emscripten_memcpy_big, "_fabs": _fabs, "_floor": _floor, "_sqrt": _sqrt, "flush_NO_FILESYSTEM": flush_NO_FILESYSTEM, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "ABORT": ABORT, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX };
+Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "abortStackOverflow": abortStackOverflow, "nullFunc_d": nullFunc_d, "nullFunc_dd": nullFunc_dd, "nullFunc_ddd": nullFunc_ddd, "nullFunc_dddd": nullFunc_dddd, "nullFunc_ddddd": nullFunc_ddddd, "nullFunc_dddddd": nullFunc_dddddd, "nullFunc_ddddddd": nullFunc_ddddddd, "nullFunc_dddddddd": nullFunc_dddddddd, "nullFunc_di": nullFunc_di, "nullFunc_did": nullFunc_did, "nullFunc_didd": nullFunc_didd, "nullFunc_diddd": nullFunc_diddd, "nullFunc_didddd": nullFunc_didddd, "nullFunc_diddddd": nullFunc_diddddd, "nullFunc_didddddd": nullFunc_didddddd, "nullFunc_diddddddd": nullFunc_diddddddd, "nullFunc_ii": nullFunc_ii, "nullFunc_iiii": nullFunc_iiii, "invoke_d": invoke_d, "invoke_dd": invoke_dd, "invoke_ddd": invoke_ddd, "invoke_dddd": invoke_dddd, "invoke_ddddd": invoke_ddddd, "invoke_dddddd": invoke_dddddd, "invoke_ddddddd": invoke_ddddddd, "invoke_dddddddd": invoke_dddddddd, "invoke_di": invoke_di, "invoke_did": invoke_did, "invoke_didd": invoke_didd, "invoke_diddd": invoke_diddd, "invoke_didddd": invoke_didddd, "invoke_diddddd": invoke_diddddd, "invoke_didddddd": invoke_didddddd, "invoke_diddddddd": invoke_diddddddd, "invoke_ii": invoke_ii, "invoke_iiii": invoke_iiii, "___lock": ___lock, "___setErrNo": ___setErrNo, "___syscall140": ___syscall140, "___syscall146": ___syscall146, "___syscall54": ___syscall54, "___syscall6": ___syscall6, "___unlock": ___unlock, "_ceil": _ceil, "_emscripten_memcpy_big": _emscripten_memcpy_big, "_fabs": _fabs, "_floor": _floor, "_sqrt": _sqrt, "flush_NO_FILESYSTEM": flush_NO_FILESYSTEM, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "ABORT": ABORT, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX };
 // EMSCRIPTEN_START_ASM
 var asm =Module["asm"]// EMSCRIPTEN_END_ASM
 (Module.asmGlobalArg, Module.asmLibraryArg, buffer);
@@ -2210,18 +2205,6 @@ var real__sbrk = asm["_sbrk"]; asm["_sbrk"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
   return real__sbrk.apply(null, arguments);
-};
-
-var real__startTimer = asm["_startTimer"]; asm["_startTimer"] = function() {
-  assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
-  assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-  return real__startTimer.apply(null, arguments);
-};
-
-var real__stopTimer = asm["_stopTimer"]; asm["_stopTimer"] = function() {
-  assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
-  assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-  return real__stopTimer.apply(null, arguments);
 };
 
 var real_establishStackSpace = asm["establishStackSpace"]; asm["establishStackSpace"] = function() {
@@ -2306,14 +2289,6 @@ var _sbrk = Module["_sbrk"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
   return Module["asm"]["_sbrk"].apply(null, arguments) };
-var _startTimer = Module["_startTimer"] = function() {
-  assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
-  assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-  return Module["asm"]["_startTimer"].apply(null, arguments) };
-var _stopTimer = Module["_stopTimer"] = function() {
-  assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
-  assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-  return Module["asm"]["_stopTimer"].apply(null, arguments) };
 var establishStackSpace = Module["establishStackSpace"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
