@@ -20,7 +20,7 @@ If you want to customize this project, this is how you compile.
 To compile the C files [Emscripten](https://github.com/kripken/emscripten) needs to me installed.
 [Emscripten](https://github.com/kripken/emscripten) compiles the C code into a [".wasm"](https://webassembly.org/docs/text-format/) 
 file and the auto generates JavaScript file for easy C method calling.
-To compile run the compile script "compile.sh" by typing:
+To compile run the compile script "compile.sh" in the root directory by typing:
 ```
 ./compile.sh
 ```
