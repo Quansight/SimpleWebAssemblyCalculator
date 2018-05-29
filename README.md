@@ -1,5 +1,5 @@
 # Web Assembly Calculator
-## About:
+## About
 This is a simple calculator that is written in C and JavaScript.
 The C program and libraries are compiled to a [".wasm"](https://webassembly.org/docs/text-format/) binary file using
 [Emscripten](https://github.com/kripken/emscripten). Emscripten compiles and 
@@ -14,7 +14,7 @@ To compile the C files [Emscripten](https://github.com/kripken/emscripten) needs
 file and the auto generates JavaScript file for easy C method calling.
 This command was used to compile the C file and libraries.
 ```
- emcc wasmCalculator.c tinyexpr.c -s EXTRA_EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]' -s WASM=1 -o index.js -lm
+emcc ./src/c_code/wasmCalculator.c ./src/c_code/tinyexpr.c -s EXPORTED_FUNCTIONS='["ccall", "cwrap"]' -s WASM=1 -o ./src/webpage/index.js -lm
 ```
 
 ## Running the page
