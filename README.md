@@ -13,7 +13,7 @@ To run the page run the command:
 python -m SimpleHTTPServer 9000
 ```
 This sets up a local HTTP server to connect to from the adress `localhost:9000/home.html`
-in a web browser. When HTTP server loads, click on "home.html" file.
+in a web browser. When HTTP server loads, follow the path ```src/webpage/home.html```.
 
 ## Compiling
 If you want to customize this project, this is how you compile.
